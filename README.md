@@ -21,9 +21,7 @@ A TODO lists app based on React and Django.
 
 ## Development
 
-### Versions
+### Tutor
 
-These are known to work but other versions may also do it.
-
-- node 8.11.3
-- npm 6.1.0
+Tutor is the front-end module for this app and lives in `tutor/` dir. More info
+in its [README](./tutor/README.md).

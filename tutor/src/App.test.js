@@ -1,9 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
+import List from './List';
+import NewTask from './NewTask';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it('renders title', () => {
+  const app = shallow(<App />);
+
+  expect(app).toContainReact(<h1 className="App-title">Todo List</h1>);
+});
+
+it('renders tasks list', () => {
+  const app = shallow(<App />);
+
+  expect(app).toContainReact(<List />);
+});
+
+it('renders new task input', () => {
+  const app = shallow(<App />);
+
+  expect(app).toContainReact(<NewTask />);
 });
