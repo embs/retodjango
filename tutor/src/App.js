@@ -23,6 +23,16 @@ class App extends Component {
       });
   }
 
+  handleNewTask(taskName) {
+    Chalk
+      .post('/tasks', { name: taskName })
+      .then(response => {
+        this.setState({
+          tasks: this.state.tasks.concat(response.data),
+        });
+      });
+  }
+
   render() {
     return (
       <div className="App">
@@ -30,7 +40,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Todo List</h1>
         </header>
-        <NewTask />
+        <NewTask onSubmit={(t) => this.handleNewTask(t)} />
         <List tasks={this.state.tasks} />
       </div>
     );

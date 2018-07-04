@@ -4,6 +4,7 @@ import mockAxios from 'jest-mock-axios';
 import App from './App';
 import List from './List';
 import NewTask from './NewTask';
+import Chalk from './Chalk';
 
 afterEach(() => {
   mockAxios.reset();
@@ -25,7 +26,33 @@ it('renders tasks list', () => {
 });
 
 it('renders new task input', () => {
+  let handleNewTaskMock = jest.fn();
   const app = shallow(<App />);
+  const newTask = app.find('NewTask');
 
-  expect(app).toContainReact(<NewTask />);
+  expect(newTask.length).toBe(1);
+
+  app.instance().handleNewTask = handleNewTaskMock;
+  const onSubmitProp = app.find('NewTask').props().onSubmit;
+  onSubmitProp('Task Name');
+
+  expect(handleNewTaskMock).toHaveBeenCalled();
+});
+
+it('creates new task', () => {
+  let postFn = jest.fn();
+  const taskNameFromUser = 'Go to the gym';
+  const taskNameFromServer = `${taskNameFromUser} tomorrow`;
+  const taskFromServer = { name: taskNameFromServer };
+  const app = shallow(<App />);
+  mockAxios.mockResponse({ data: [] });
+
+  app.instance().handleNewTask(taskNameFromUser);
+
+  expect(mockAxios.post).toHaveBeenCalledWith('/tasks',
+    { name: taskNameFromUser });
+
+  mockAxios.mockResponse({ data: taskFromServer });
+
+  expect(app).toHaveState('tasks', [taskFromServer]);
 });

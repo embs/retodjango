@@ -26,11 +26,18 @@ class NewTask extends Component {
   }
 
   handleKeyPress(event) {
-    if(event.key === 'Enter' && this.state.name === '') {
+    if(event.key !== 'Enter') {
+      return;
+    }
+
+    if(this.state.name === '') {
       this.setState({
         error: 'new-task__input--error',
         placeholder: 'Please write something here'
       });
+    } else {
+      this.props.onSubmit(this.state.name);
+      this.setState({ name: '' });
     }
   }
 
