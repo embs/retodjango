@@ -13,5 +13,5 @@ it('renders tasks', () => {
   const task = { name: taskName };
   const list = shallow(<List tasks={[task]} />);
 
-  expect(list).toContainReact(<li>Do something</li>);
+  expect(list).toHaveText(taskName);
 });

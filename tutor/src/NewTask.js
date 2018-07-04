@@ -32,7 +32,7 @@ class NewTask extends Component {
 
     if(this.state.name === '') {
       this.setState({
-        error: 'new-task__input--error',
+        error: 'is-invalid',
         placeholder: 'Please write something here'
       });
     } else {
@@ -42,16 +42,23 @@ class NewTask extends Component {
   }
 
   render() {
+    const inputClasses = 'form-control form-control-lg';
+
     return (
-      <div className="new-task">
-        <input
-          type="text"
-          value={this.state.name}
-          placeholder={this.state.placeholder}
-          className={`new-task__input ${this.state.error}`}
-          onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress}
-        />
+      <div className="new-task form-group">
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            value={this.state.name}
+            placeholder={this.state.placeholder}
+            className={`new-task__input ${this.state.error} ${inputClasses}`}
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
+          />
+          <div className="input-group-append">
+            <span className="input-group-text">⏎</span>
+          </div>
+        </div>
       </div>
     );
   }
