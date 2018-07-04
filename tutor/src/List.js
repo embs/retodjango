@@ -10,9 +10,9 @@ class List extends Component {
 
     return (
       <ul className="list-group">
-        {this.props.tasks.map((task, index) => {
+        {this.props.tasks.map((task) => {
           return (
-            <li key={index} className="list-group-item">
+            <li key={task.id} className="list-group-item">
               {task.name}
             </li>
           )

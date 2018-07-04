@@ -9,9 +9,9 @@ it('renders empty ul', () => {
 });
 
 it('renders tasks', () => {
-  const taskName = 'Do something';
-  const task = { name: taskName };
+  const task = { id: '123', name: 'Do something' };
   const list = shallow(<List tasks={[task]} />);
 
-  expect(list).toHaveText(taskName);
+  expect(list).toHaveText(task.name);
+  expect(list.find('li').at(0).key()).toBe(task.id);
 });
