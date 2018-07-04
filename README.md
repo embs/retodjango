@@ -4,8 +4,9 @@ A TODO lists app based on React and Django.
 
 ## Featuring
 
-- [ ] Simple todo list
-  - Add and remove tasks
+- [x] Add tasks
+- [ ] Remove tasks
+- [ ] Handle back-end errors
 - [ ] List's editable title
 - [ ] Editable tasks
 - [ ] Mark task as done
@@ -18,3 +19,10 @@ A TODO lists app based on React and Django.
 - [ ] Tasks assignment
 - [ ] E-mail daily report
 - [ ] Download daily report as PDF
+
+## Development
+
+### Tutor
+
+Tutor is the front-end module for this app and lives in `tutor/` dir. More info
+in its [README](./tutor/README.md).

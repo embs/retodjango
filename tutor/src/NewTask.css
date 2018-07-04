@@ -1,0 +1,11 @@
+.new-task {
+  margin-top: 15px;
+}
+
+.new-task__input {
+  width: 300px;
+}
+
+.new-task__input--error {
+  background-color: #ffdddd;
+}
