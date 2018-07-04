@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
+if [ ! -a ./tasks.json ]; then
+  cp ./tasks.json.example ./tasks.json
+fi
+
 ./node_modules/json-server/bin/index.js -w -q -p 3001 tasks.json &

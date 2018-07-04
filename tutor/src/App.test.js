@@ -18,7 +18,7 @@ it('renders title', () => {
 it('renders tasks list', () => {
   const tasks = [{ name: 'Make homework' }];
   const app = shallow(<App />);
-  mockAxios.mockResponse({ data: { tasks: tasks } });
+  mockAxios.mockResponse({ data: tasks });
 
   expect(app).toIncludeText('<List />');
   expect(app).toHaveState('tasks', tasks);

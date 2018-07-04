@@ -18,7 +18,7 @@ class App extends Component {
     Chalk('/tasks')
       .then(response => {
         this.setState({
-          tasks: response.data.tasks,
+          tasks: response.data,
         });
       });
   }
