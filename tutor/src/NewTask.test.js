@@ -7,7 +7,7 @@ it('shows error for blank task submission', () => {
 
   findInput(newTask).simulate('keyPress', { key: 'Enter' });
 
-  expect(findInput(newTask)).toHaveClassName('new-task__input--error');
+  expect(findInput(newTask)).toHaveClassName('is-invalid');
 });
 
 it('clears error after name assignment', () => {

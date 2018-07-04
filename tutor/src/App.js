@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 import logo from './logo.svg';
 import './App.css';
 import Chalk from './Chalk.js';
@@ -35,13 +37,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Todo List</h1>
         </header>
-        <NewTask onSubmit={(t) => this.handleNewTask(t)} />
-        <List tasks={this.state.tasks} />
+        <div className="row justify-content-center">
+          <div className="col-3">
+            <NewTask onSubmit={(t) => this.handleNewTask(t)} />
+            <List tasks={this.state.tasks} />
+          </div>
+        </div>
       </div>
     );
   }
