@@ -1,3 +1,3 @@
 Start
 
-    $ python manage.py startapp api
+    $ python manage.py runserver
