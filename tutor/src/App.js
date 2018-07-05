@@ -52,6 +52,16 @@ class App extends Component {
       });
   }
 
+  handleRemove(taskId) {
+    Chalk
+      .delete(`/tasks/${taskId}`)
+      .then(response => {
+        let tasks = this.state.tasks.slice();
+        tasks = tasks.filter((t) => { return t.id !== taskId });
+        this.setState({ tasks: tasks });
+      });
+  }
+
   render() {
     return (
       <div className="App container-fluid">
@@ -65,6 +75,7 @@ class App extends Component {
             <List
               tasks={this.state.tasks}
               onMarkAsDone={(t) => {this.handleMarkAsDone(t)}}
+              onRemove={(t) => {this.handleRemove(t)}}
             />
           </div>
         </div>

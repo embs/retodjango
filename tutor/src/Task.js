@@ -38,6 +38,15 @@ class Task extends Component {
             className={this.inputClasses(this.props.done)}
             value={this.props.name}
           />
+          <div className="input-group-prepend">
+            <button
+              className={`btn btn-outline-danger`}
+              type="button"
+              onClick={() => this.props.onRemove(this.props.id)}
+            >
+              ⌫
+            </button>
+          </div>
         </div>
       </li>
     );

@@ -7,8 +7,10 @@ import Task from './Task';
 describe('render', () => {
   it('renders tasks', () => {
     let onMarkAsDone = jest.fn();
+    let onRemove = jest.fn();
     const task = { id: '123', name: 'Do something', done: false };
-    const list = shallow(<List tasks={[task]} onMarkAsDone={onMarkAsDone} />);
+    const list = shallow(
+      <List tasks={[task]} onMarkAsDone={onMarkAsDone} onRemove={onRemove} />);
     const renderedTaskProps = list.find(Task).props();
   
     expect(renderedTaskProps.id).toEqual(task.id);
@@ -16,6 +18,7 @@ describe('render', () => {
     expect(renderedTaskProps.done).toEqual(task.done);
     expect(renderedTaskProps.done).toEqual(task.done);
     expect(renderedTaskProps.onMarkAsDone).toEqual(onMarkAsDone);
+    expect(renderedTaskProps.onRemove).toEqual(onRemove);
   });
 
   describe('when there are not any tasks to render', () => {
