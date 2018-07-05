@@ -17,7 +17,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    Chalk('/tasks')
+    Chalk
+      .get('/tasks')
       .then(response => {
         this.setState({
           tasks: response.data,
@@ -35,6 +36,22 @@ class App extends Component {
       });
   }
 
+  handleMarkAsDone(taskId) {
+    let tasks = this.state.tasks.slice();
+    const taskIndex = tasks.findIndex((t) => { return t.id === taskId });
+    let task = tasks[taskIndex];
+
+    Chalk
+      .put(`/tasks/${task.id}`, Object.assign({}, task, { done: !task.done }))
+      .then(response => {
+        tasks[taskIndex] = response.data;
+        this.setState({ tasks: tasks });
+      })
+      .catch(error => {
+        console.log("ERROR " + error);
+      });
+  }
+
   render() {
     return (
       <div className="App container-fluid">
@@ -45,7 +62,10 @@ class App extends Component {
         <div className="row justify-content-center">
           <div className="col-3">
             <NewTask onSubmit={(t) => this.handleNewTask(t)} />
-            <List tasks={this.state.tasks} />
+            <List
+              tasks={this.state.tasks}
+              onMarkAsDone={(t) => {this.handleMarkAsDone(t)}}
+            />
           </div>
         </div>
       </div>

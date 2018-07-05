@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class List extends Component {
-  render() {
-    const tasks = this.props.tasks;
+import Task from './Task';
 
-    if(!tasks) {
-      return <ul></ul>;
-    }
+import './List.css';
 
-    return (
-      <ul className="list-group">
-        {this.props.tasks.map((task, index) => {
-          return (
-            <li key={index} className="list-group-item">
-              {task.name}
-            </li>
-          )
-        })}
-      </ul>
-    );
+function List(props) {
+  const tasks = props.tasks;
+
+  if(!tasks) {
+    return <ul></ul>;
   }
+
+  return (
+    <ul className="list-group list">
+      {tasks.map((task) => {
+        return (
+          <Task
+            key={task.id}
+            id={task.id}
+            name={task.name}
+            done={task.done}
+            onMarkAsDone={props.onMarkAsDone}
+          />
+        )
+      })}
+    </ul>
+  );
 }
 
 export default List;

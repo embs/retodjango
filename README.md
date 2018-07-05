@@ -9,7 +9,7 @@ A TODO lists app based on React and Django.
 - [ ] Handle back-end errors
 - [ ] List's editable title
 - [ ] Editable tasks
-- [ ] Mark task as done
+- [x] Mark task as done
 - [ ] Assign task's due date
 - [ ] Multiple lists
 - [ ] User accounts
