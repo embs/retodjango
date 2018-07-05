@@ -100,6 +100,27 @@ describe('handleMarkAsDone', () => {
   });
 });
 
+describe('handleRemove', () => {
+  let task = { id: 50, name: 'Make homework', done: false };
+  let task1 = { id: 51, name: 'Make homework', done: false };
+  let setState = jest.fn();
+
+  beforeEach(() => {
+    app.state = { tasks: [task, task1] };
+    app.setState = setState;
+    app.handleRemove(task.id);
+    mockAxios.mockResponse({ data: {} });
+  });
+
+  it('DELETEs task from backend', () => {
+    expect(mockAxios.delete).toHaveBeenCalledWith(`/tasks/${task.id}`);
+  });
+
+  it('updates state', () => {
+    expect(setState).toHaveBeenCalledWith({ tasks: [task1] });
+  });
+});
+
 describe('render', () => {
   beforeEach(() => {
     tasksFromServer = [{ name: 'Make homework' }];
@@ -140,5 +161,18 @@ describe('render', () => {
     onMarkAsDone(taskId);
 
     expect(handleMarkAsDone).toHaveBeenCalledWith(taskId);
+  });
+
+  it('assigns handler for removing task', () => {
+    let handleRemove = jest.fn();
+    const onRemove = app.find('List').props().onRemove;
+    const taskId = 123;
+
+    expect(onRemove).toBeDefined();
+
+    app.instance().handleRemove = handleRemove;
+    onRemove(taskId);
+
+    expect(handleRemove).toHaveBeenCalledWith(taskId);
   });
 });

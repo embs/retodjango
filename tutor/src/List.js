@@ -21,6 +21,7 @@ function List(props) {
             name={task.name}
             done={task.done}
             onMarkAsDone={props.onMarkAsDone}
+            onRemove={props.onRemove}
           />
         )
       })}

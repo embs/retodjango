@@ -5,7 +5,7 @@ A TODO lists app based on React and Django.
 ## Featuring
 
 - [x] Add tasks
-- [ ] Remove tasks
+- [x] Remove tasks
 - [ ] Handle back-end errors
 - [ ] List's editable title
 - [ ] Editable tasks

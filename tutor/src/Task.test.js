@@ -6,6 +6,7 @@ import Task from './Task';
 let task;
 let props = { id: '123', name: 'Do something', done: false };
 let onMarkAsDone = jest.fn();
+let onRemove = jest.fn();
 
 beforeEach(() => {
   task = shallow(
@@ -14,6 +15,7 @@ beforeEach(() => {
       name={props.name}
       done={props.done}
       onMarkAsDone={onMarkAsDone}
+      onRemove={onRemove}
     />
   );
 });
@@ -24,7 +26,11 @@ describe('render', () => {
   });
 
   it('renders mark as done button', () => {
-    expect(task.find('button')).toHaveClassName('btn-outline-secondary');
+    expect(task.find('button').first()).toHaveClassName('btn-outline-secondary');
+  });
+
+  it('renders remove button', () => {
+    expect(task.find('button').last()).toHaveText('⌫');
   });
   
   describe('when task is done', () => {
@@ -33,7 +39,7 @@ describe('render', () => {
     });
 
     it('renders mark as done button', () => {
-      expect(task.find('button')).toHaveClassName('btn-success');
+      expect(task.find('button').first()).toHaveClassName('btn-success');
     });
 
     it('renders task name with strikethrough', () => {
@@ -44,8 +50,16 @@ describe('render', () => {
 
 describe('onMarkAsDone', () => {
   it('calls function from props', () => {
-    task.find('button').simulate('click');
+    task.find('button').first().simulate('click');
 
     expect(onMarkAsDone).toHaveBeenCalledWith(props.id);
+  });
+});
+
+describe('onRemove', () => {
+  it('calls function from props', () => {
+    task.find('button').last().simulate('click');
+
+    expect(onRemove).toHaveBeenCalledWith(props.id);
   });
 });
