@@ -1,3 +1,13 @@
+### Dependencies
+
+- Python 3.6.2
+- pipenv
+
+### Setup
+
+    $ pipenv install
+    $ pipenv shell
+
 ### Start
 
     $ ./manage.py runserver
