@@ -11,7 +11,13 @@ These are known to work but other versions may also do it.
 
 ### Run
 
+Solo
+
     $ npm start
+
+With dummy back-end
+
+    $ npm run dummy
 
 ### Tests
 

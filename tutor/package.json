@@ -16,7 +16,8 @@
     "react-test-renderer": "^16.4.1"
   },
   "scripts": {
-    "start": "./bin/slaty && react-scripts start",
+    "start": "react-scripts start",
+    "dummy": "./bin/slaty && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
