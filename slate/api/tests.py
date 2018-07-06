@@ -14,8 +14,8 @@ class TaskResourceTest(ResourceTestCaseMixin, TestCase):
 
         self.task = Task.objects.create(name='Do Something')
 
-    def get(self, url):
-        return self.api_client.get(url)
+    def get(self, url, **kwargs):
+        return self.api_client.get(url, **kwargs)
 
 class GetTasksTest(TaskResourceTest):
     def setUp(self):
@@ -57,3 +57,12 @@ class PutTaskTest(TaskResourceTest):
 class DeleteTaskTest(TaskResourceTest):
     def test_returns_accepted(self):
         self.assertHttpAccepted(self.api_client.delete('/tasks/1'))
+
+class CorsTest(TaskResourceTest):
+    def setUp(self):
+        super(CorsTest, self).setUp()
+
+        self.headers = self.get('/tasks', HTTP_ORIGIN='somewhereelse')._headers
+
+    def test_allows_cors(self):
+        self.assertIn('access-control-allow-origin', self.headers)
