@@ -48,8 +48,8 @@ class PostTaskTest(TaskResourceTest):
         return self.api_client.post('/tasks', format='json', data=data)
 
 class PutTaskTest(TaskResourceTest):
-    def test_returns_accepted(self):
-        self.assertHttpAccepted(self.__put({ 'name': 'Do Other Thing' }))
+    def test_returns_ok(self):
+        self.assertHttpOK(self.__put({ 'name': 'Do Other Thing' }))
 
     def __put(self, data):
         return self.api_client.put('/tasks/1', format='json', data=data)

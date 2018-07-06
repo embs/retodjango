@@ -11,3 +11,4 @@ class TaskResource(ModelResource):
         resource_name = 'tasks'
         authorization = Authorization()
         serializer = CustomJSONSerializer()
+        always_return_data = True
