@@ -26,3 +26,8 @@ A TODO lists app based on React and Django.
 
 Tutor is the front-end module for this app and lives in `tutor/` dir. More info
 in its [README](./tutor/README.md).
+
+### Slate
+
+Slate is a Django API which serves the purpose of our back-end. More info in the
+[README](./slate/README.md).
