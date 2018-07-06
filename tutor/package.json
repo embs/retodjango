@@ -1,5 +1,6 @@
 {
   "name": "tutor",
+  "homepage": "http://embs.io/retodjango",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
