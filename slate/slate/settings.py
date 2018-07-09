@@ -25,7 +25,9 @@ SECRET_KEY = '!1n$@l-1qqaho6!ut$x-(bd=gj@k8u29n4nh89yhapyzirl6ng'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'retodjango.herokuapp.com',
+]
 
 
 # Application definition
