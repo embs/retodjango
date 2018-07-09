@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+VERSION=$(git rev-parse HEAD)
+
+set -ev
+npm run build
+rm -rf ~/Code/embs/embs.github.io/retodjango
+cp -R ./build/ ~/Code/embs/embs.github.io/retodjango
+cd ~/Code/embs/embs.github.io && git add .
+git commit -m "retodjango: deploy $VERSION"
+git push origin master
+cd -
