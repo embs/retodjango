@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd ../
+git subtree push --prefix slate heroku master
+cd -
