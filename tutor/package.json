@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "dummy": "./bin/slaty && react-scripts start",
     "build": "react-scripts build",
+    "deploy": "./bin/deploy",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

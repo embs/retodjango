@@ -25,3 +25,13 @@ Single class
 Single test case
 
     $ ./manage.py test api.tests.GetTasksTest.test_returns_ok
+
+### Deploy
+
+Setup Heroku's remote
+
+    $ git remote add heroku https://git.heroku.com/retodjango.git
+
+Deploy
+
+    $ ./bin/deploy

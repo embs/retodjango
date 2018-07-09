@@ -27,7 +27,4 @@ With dummy back-end
 
 To http://embs.io/retodjango
 
-    $ npm build
-    $ cp -R ./build/ ~/Code/embs/embs.github.io/
-    $ cd ~/Code/embs/embs.github.io && git add . && git commit
-    $ git push origin master
+    $ npm run deploy

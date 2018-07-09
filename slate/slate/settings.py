@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -125,3 +126,5 @@ STATIC_URL = '/static/'
 TASTYPIE_ALLOW_MISSING_SLASH = True
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+django_heroku.settings(locals())
