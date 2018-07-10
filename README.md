@@ -22,12 +22,30 @@ A TODO lists app based on React and Django.
 
 ## Development
 
-### Tutor
+### App's Components
+
+**Tutor**
 
 Tutor is the front-end module for this app and lives in `tutor/` dir. More info
 in its [README](./tutor/README.md).
 
-### Slate
+**Slate**
 
 Slate is a Django API which serves the purpose of our back-end. More info in the
 [README](./slate/README.md).
+
+**Pupil**
+
+Integration tests for the whole app's apparatus. See
+[README](./pupil/README.md).
+
+### Automated Tests Strategy
+
+**Unit / Feature tests**
+
+Provide faster feedback within development cycles and live inside components'
+(tutor & slate) filesystem structures.
+
+**Integration Tests**
+
+Exercise end-to-end app's behavior and live inside `pupil` directory.
