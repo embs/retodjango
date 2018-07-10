@@ -31,3 +31,8 @@ in its [README](./tutor/README.md).
 
 Slate is a Django API which serves the purpose of our back-end. More info in the
 [README](./slate/README.md).
+
+### Pupil
+
+Integration tests for the whole app's apparatus. See
+[README](./pupil/README.md).
