@@ -7,23 +7,23 @@ module.exports = {
   },
 
   selenium: {
-    start_process: true,
-    server_path: require('selenium-server').path,
-    host: '127.0.0.1',
-    port: 4444,
-    cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path,
-    },
+    start_process: false,
   },
 
   test_settings: {
     default: {
+      selenium_host: 'localhost',
+      selenium_port: 9515,
+      default_path_prefix: '',
+
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
         chromeOptions: {
           args: [
             'headless',
+            'no-sandbox',
+            '--no-sandbox',
           ],
         }
       },

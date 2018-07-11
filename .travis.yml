@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker-compose up -d chromedriver tutor
+  - sleep 2
+  - docker-compose run pupil
