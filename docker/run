@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+docker-compose up -d chromedriver tutor
+sleep 2
+docker-compose ps
+curl -w "\n" localhost:9515
+curl -w "\n" localhost:3000
+curl -w "\n" localhost:3001/tasks
+docker-compose run pupil

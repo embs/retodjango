@@ -7,7 +7,7 @@ name = "pypi"
 django = "*"
 django-cors-headers = "*"
 django-tastypie = "*"
-gunicorn = "*"
+gunicorn = {version = "*", extras = ["gevent"]}
 django-heroku = "*"
 
 [dev-packages]
