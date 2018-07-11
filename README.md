@@ -1,3 +1,5 @@
+[![Build Status][travis-badge]][travis]
+
 # reTODjangO
 
 A TODO lists app based on React and Django.
@@ -49,3 +51,6 @@ Provide faster feedback within development cycles and live inside components'
 **Integration Tests**
 
 Exercise end-to-end app's behavior and live inside `pupil` directory.
+
+[travis]: https://travis-ci.org/embs/retodjango
+[travis-badge]: https://travis-ci.org/embs/retodjango.svg?branch=master
