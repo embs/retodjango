@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 docker-compose up -d chromedriver tutor
 sleep 2
 docker-compose ps
