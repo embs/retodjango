@@ -24,7 +24,7 @@ A TODO lists app based on React and Django.
 
 ## Development
 
-### App's Components
+### Project's Constituents
 
 **Tutor**
 
@@ -40,6 +40,10 @@ Slate is a Django API which serves the purpose of our back-end. More info in the
 
 Integration tests for the whole app's apparatus. See
 [README](./pupil/README.md).
+
+**./docker/**
+
+Facilities for using Docker.  See [README](./docker/README.md).
 
 ### Automated Tests Strategy
 
