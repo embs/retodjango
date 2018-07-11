@@ -22,6 +22,7 @@ module.exports = {
         chromeOptions: {
           args: [
             'headless',
+            '--no-sandbox',
           ],
         }
       },
