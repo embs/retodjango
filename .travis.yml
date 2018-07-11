@@ -7,10 +7,4 @@ services:
 before_script: cd docker
 
 script:
-  - docker-compose up -d chromedriver tutor
-  - sleep 2
-  - docker-compose ps
-  - curl localhost:9515
-  - curl localhost:3000
-  - curl localhost:3001/tasks
-  - docker-compose run pupil
+  - ./run
