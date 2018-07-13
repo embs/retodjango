@@ -2,7 +2,7 @@ import React from 'react';
 
 import Task from './Task';
 
-import './List.css';
+import './../css/List.css';
 
 function List(props) {
   const tasks = props.tasks;

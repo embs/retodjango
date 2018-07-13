@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './Task.css';
+import './../css/Task.css';
 
 class Task extends Component {
   doneButtonClass(done) {

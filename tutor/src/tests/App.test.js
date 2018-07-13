@@ -1,10 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import mockAxios from 'jest-mock-axios';
-import App from './App';
-import List from './List';
-import NewTask from './NewTask';
-import Chalk from './Chalk';
+
+import App from './../components/App';
+import List from './../components/List';
+import NewTask from './../components/NewTask';
+
+import Chalk from './../transport/Chalk';
 
 let app;
 let tasksFromServer;
