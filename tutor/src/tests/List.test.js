@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import List from './List';
-import Task from './Task';
+import List from './../components/List';
+import Task from './../components/Task';
 
 describe('render', () => {
   it('renders tasks', () => {

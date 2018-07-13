@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import logo from './logo.svg';
-import './App.css';
-import Chalk from './Chalk.js';
+
 import List from './List.js';
 import NewTask from './NewTask.js';
+
+import logo from './../img/logo.svg';
+
+import './../css/App.css';
+
+import Chalk from './../transport/Chalk.js';
 
 class App extends Component {
   constructor(props) {

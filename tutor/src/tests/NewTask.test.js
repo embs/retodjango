@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NewTask from './NewTask';
+
+import NewTask from './../components/NewTask';
 
 it('shows error for blank task submission', () => {
   const newTask = buildNewTask();

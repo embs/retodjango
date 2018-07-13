@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './NewTask.css'
+import './../css/NewTask.css'
 
 class NewTask extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Task from './Task';
+import Task from './../components/Task';
 
 let task;
 let props = { id: '123', name: 'Do something', done: false };
